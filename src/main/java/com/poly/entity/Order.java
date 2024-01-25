@@ -57,7 +57,7 @@ public class Order implements Serializable {
 	OrderStatus orderStatus;
 	
 	@ManyToOne
-	@JoinColumn(name = "payment_metho_id")
+	@JoinColumn(name = "payment_method_id")
 	PaymentMethod paymentMethod;
 	
 	@JsonIgnore
