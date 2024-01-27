@@ -10,6 +10,8 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -28,8 +30,12 @@ public class OrderDetail implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	@NotNull(message = "{NotNull.orderDetail.quantity}")
+	@Positive(message = "{Positive.orderDetail.quantity}")
 	private Integer quantity;
 	
+	@NotNull(message = "{NotNull.orderDetail.price}")
+	@Positive(message = "{Positive.orderDetail.price}")
 	private Double price;
 	
 	@ManyToOne

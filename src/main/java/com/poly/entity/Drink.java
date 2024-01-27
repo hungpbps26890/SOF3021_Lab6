@@ -51,7 +51,7 @@ public class Drink implements Serializable  {
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "drink")
-	private List<Image> images;
+	private List<DrinkImage> images;
 	
 	@JsonIgnore
 	@OneToMany(mappedBy = "drink")

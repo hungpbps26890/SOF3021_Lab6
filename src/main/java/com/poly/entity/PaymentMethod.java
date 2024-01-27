@@ -8,6 +8,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,5 +28,6 @@ public class PaymentMethod implements Serializable {
 	private Integer id;
 	
 	@Column(columnDefinition = "nvarchar(150)")
+	@NotNull(message = "{NotNull.paymentMethod.name}")
 	private String name;
 }

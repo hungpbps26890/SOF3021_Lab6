@@ -21,14 +21,14 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "images")
-public class Image implements Serializable {
+@Table(name = "drink_images")
+public class DrinkImage implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(columnDefinition = "nvarchar(255)")
+	@Column(columnDefinition = "nvarchar(60)")
 	private String name;
 	
 	@ManyToOne

@@ -8,6 +8,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -26,10 +29,14 @@ public class Topping implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(columnDefinition = "nvarchar(255)")
+	@NotEmpty(message = "{NotEmpty.topping.name}")
+	@Column(columnDefinition = "nvarchar(100)")
 	private String name;
 	
+	@NotNull(message = "{NotNull.topping.price}")
+	@Positive(message = "{Positive.topping.price")
 	private Double price;
 	
+	@NotNull(message = "{NotNull.topping.active}")
 	private Boolean active = true;
 }

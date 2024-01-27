@@ -12,6 +12,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -31,15 +32,19 @@ public class Address implements Serializable {
 	private Integer id;
 	
 	@Column(columnDefinition = "nvarchar(150)")
+	@NotEmpty(message = "{NotEmpty.address.streetnumber}")
 	private String streetnumber;
 	
 	@Column(columnDefinition = "nvarchar(150)")
+	@NotEmpty(message = "{NotEmpty.address.ward}")
 	private String ward;
 	
 	@Column(columnDefinition = "nvarchar(150)")
+	@NotEmpty(message = "{NotEmpty.address.district}")
 	private String district;
 	
 	@Column(columnDefinition = "nvarchar(150)")
+	@NotEmpty(message = "{NotEmpty.address.province}")
 	private String province;
 	
 	@JsonIgnore

@@ -1,13 +1,12 @@
 package com.poly.entity;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.List;
-
-import org.hibernate.annotations.CreationTimestamp;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -16,8 +15,6 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -36,9 +33,8 @@ public class Order implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Temporal(TemporalType.TIMESTAMP)
-	@CreationTimestamp
-	private Timestamp createDate;
+	@Column(name = "create_date")
+	private LocalDateTime createDate;
 	
 	private Boolean paymentStatus = false;
 	
@@ -57,7 +53,7 @@ public class Order implements Serializable {
 	OrderStatus orderStatus;
 	
 	@ManyToOne
-	@JoinColumn(name = "payment_metho_id")
+	@JoinColumn(name = "payment_method_id")
 	PaymentMethod paymentMethod;
 	
 	@JsonIgnore

@@ -31,7 +31,7 @@ public class Category implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(columnDefinition = "nvarchar(255)")
+	@Column(columnDefinition = "nvarchar(100)")
 	@NotEmpty(message = "{NotEmpty.category.name}")
 	private String name;
 	
