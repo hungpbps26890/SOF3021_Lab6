@@ -154,12 +154,12 @@
 									<td><a href="" class="white-text templatemo-sort-by">Drink
 											name<span class="caret"></span>
 									</a></td>
-									<td><a href="" class="white-text templatemo-sort-by">Drink
-											Price<span class="caret"></span>
+									<td><a href="" class="white-text templatemo-sort-by">Description<span class="caret"></span>
 									</a></td>
 									<td><a href="" class="white-text templatemo-sort-by">Status<span
 											class="caret"></span>
 									</a></td>
+									<td>Image</td>
 									<td>Edit</td>
 									<td>Delete</td>
 								</tr>
@@ -169,8 +169,13 @@
 									<tr>
 										<td>${item.id}</td>
 										<td>${item.name}</td>
-										<td>${item.price}</td>
+										<td>${item.description}</td>
 										<td>${item.active ? 'Active' : 'Inactive'}</td>
+										<td>
+					                      	<c:forEach var="image" items="${item.images}">
+					                      		<img src="/images/${image.name}" style="width: 100px">
+					                      	</c:forEach>
+					                      </td>
 										<td><a href="/admin/drink?btnEdit=&id=${item.id}"
 											class="templatemo-edit-btn">Edit</a></td>
 										<td><a href="/admin/drink?btnDel=&id=${item.id}"
