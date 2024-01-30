@@ -34,7 +34,7 @@ public class Topping implements Serializable {
 	private String name;
 	
 	@NotNull(message = "{NotNull.topping.price}")
-	@Positive(message = "{Positive.topping.price")
+	@Positive(message = "{Positive.topping.price}")
 	private Double price;
 	
 	@NotNull(message = "{NotNull.topping.active}")

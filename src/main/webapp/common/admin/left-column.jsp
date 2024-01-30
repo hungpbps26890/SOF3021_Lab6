@@ -18,7 +18,8 @@
           </div>
         <nav class="templatemo-left-nav">          
           <ul>
-            <li><a href="category" class="active"><i class="fa fa-users fa-fw"></i>Manage Category</a></li>
+            <li><a href="category"><i class="fa fa-users fa-fw"></i>Manage Category</a></li>
+            <li><a href="topping"><i class="fa fa-users fa-fw"></i>Manage Topping</a></li>
             <li><a href="drink"><i class="fa fa-users fa-fw"></i>Manage Drink</a></li>
           </ul>  
         </nav>
